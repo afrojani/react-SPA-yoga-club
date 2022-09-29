@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Exercise = (props) => {
-    console.log(props);
+    // console.log(props);
 
-    const { name, time, img } = props.exercise;
+    const { exercise, selectedYoga } = props;
+    const { name, time, img } = exercise;
     return (
         <div>
 
@@ -12,7 +13,7 @@ const Exercise = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">Time Requied: {time}s</p>
-                    <button onClick={() => props.selectedYoga()} className="btn btn-primary">Select Yoga</button>
+                    <button onClick={() => selectedYoga(exercise)} className="btn btn-primary">Select Yoga</button>
                 </div>
             </div>
 
