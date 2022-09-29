@@ -6,6 +6,7 @@ import Profile from '../Profile/Profile';
 
 const Exercises = () => {
     const [exercises, setExercises] = useState([]);
+    const [cart, setCart] = useState([]);
 
     // ------------------
 
@@ -16,11 +17,11 @@ const Exercises = () => {
             .then(data => setExercises(data))
     }, []);
     // ----------------------------------------
-    //     const selectedYoga = (exercise) => {
-    //         console.log(exercise);
-    //         const newCart = [...cart, exercise];
-    //         setCart(newCart);
-    //     }
+    const selectedYoga = (exercise) => {
+        console.log(exercise);
+        const newCart = [...cart, exercise];
+        setCart(newCart);
+    }
 
     // // ----------------------------------------
 
@@ -38,15 +39,15 @@ const Exercises = () => {
                             exercises.map(exercise => <Exercise
                                 key={exercise.id}
                                 exercise={exercise}
-                            // ---------------------------
-                            // selectedYoga={selectedYoga}
+                                // ---------------------------
+                                selectedYoga={selectedYoga}
                             ></Exercise>)
                         }
                     </div>
                 </div>
             </div>
             <div className='bg-light border border-warning col-3'>
-                <Profile></Profile>
+                <Profile cart={cart}></Profile>
             </div>
         </div>
     );

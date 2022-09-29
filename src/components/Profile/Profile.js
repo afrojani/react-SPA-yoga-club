@@ -2,9 +2,14 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const Profile = () => {
+const Profile = ({ cart }) => {
+    let total = 0;
+    for (const exercise of cart) {
+        total = total + exercise.time
+    }
     return (
         <div >
+            <p>selected items: {cart.length}</p>
             <div className='d-flex align-items-center m-3'>
                 <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
                 <h5 className='m-3'>Sultana Afroj</h5><small>Dhaka,Bangladesh</small>
@@ -29,7 +34,7 @@ const Profile = () => {
                 <h5>Exercise Details</h5>
                 <div className='d-flex align-items-center justify-content-around bg-info rounded-3'>
                     <h6>Exercise time</h6>
-                    <p className='p-2'><span>0</span> seconds</p>
+                    <p className='p-2'><span>{total}</span> seconds</p>
                 </div>
                 <div className='d-flex align-items-center justify-content-around bg-info mt-2 rounded-3'>
                     <h6>Break time</h6>
