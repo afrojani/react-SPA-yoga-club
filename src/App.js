@@ -9,7 +9,7 @@ function App() {
       <div className='border border-primary col-10'>
         <Exercises></Exercises>
       </div>
-      <div className='border border-warning col-2'>
+      <div className='bg-light border border-warning col-2'>
         <Profile></Profile>
       </div>
     </div>
