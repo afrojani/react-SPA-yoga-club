@@ -12,7 +12,7 @@ const Exercise = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">Time Requied: {time}s</p>
-                    <button className="btn btn-primary">Select Yoga</button>
+                    <button onClick={() => props.selectedYoga()} className="btn btn-primary">Select Yoga</button>
                 </div>
             </div>
 

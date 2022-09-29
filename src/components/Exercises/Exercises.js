@@ -11,6 +11,10 @@ const Exercises = () => {
             .then(res => res.json())
             .then(data => setExercises(data))
     }, []);
+
+    const selectedYoga = (yoga) => {
+        console.log(yoga);
+    }
     return (
         <div className='text-white' >
             <div className='d-flex align-items-center justify-content-center'>
@@ -23,6 +27,7 @@ const Exercises = () => {
                     exercises.map(exercise => <Exercise
                         key={exercise.id}
                         exercise={exercise}
+                        selectedYoga={selectedYoga}
                     ></Exercise>)
                 }
             </div>

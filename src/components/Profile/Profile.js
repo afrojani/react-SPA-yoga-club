@@ -7,16 +7,22 @@ const Profile = () => {
         <div >
             <div className='d-flex align-items-center m-3'>
                 <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
-                <h5 className='m-3'>Sultana Afroj</h5>
+                <h5 className='m-3'>Sultana Afroj</h5><small>Dhaka,Bangladesh</small>
+            </div>
+
+            <div className='d-flex align-items-center m-3'>
+                <p className='m-1 border border-success rounded-2 p-1'>Height: 5' 4"</p>
+                <p className='m-1 border border-success rounded-2 p-1'>Weight: 60 kilos</p>
+                <p className='m-1 border border-success rounded-2 p-1'>BMI: 22.7</p>
             </div>
             <div className='m-2'>
                 <h5>Add A Break</h5>
-                <div className='d-flex bg-info rounded-3'>
-                    <button className='rounded-circle p-2 m-2'>10s</button>
-                    <button className='rounded-circle p-2 m-2'>20s</button>
-                    <button className='rounded-circle p-2 m-2'>30s</button>
-                    <button className='rounded-circle p-2 m-2'>40s</button>
-                    <button className='rounded-circle p-2 m-2'>50s</button>
+                <div className='d-flex bg-info rounded-3 align-items-center justify-content-center'>
+                    <button className='rounded-circle p-2 m-2 border border-0'>10s</button>
+                    <button className='rounded-circle p-2 m-2 border border-0'>20s</button>
+                    <button className='rounded-circle p-2 m-2 border border-0'>30s</button>
+                    <button className='rounded-circle p-2 m-2 border border-0'>40s</button>
+                    <button className='rounded-circle p-2 m-2 border border-0'>50s</button>
                 </div>
             </div>
             <div className='m-3'>
