@@ -1,6 +1,6 @@
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // toast.configure()
@@ -8,6 +8,16 @@ import 'react-toastify/dist/ReactToastify.css';
 // import Toast from '../Toast/Toast';
 
 const Profile = ({ cart }) => {
+
+    const [selectedTime, setSelectedTime] = useState([]);
+
+    const selectBreak = (e) => {
+        console.log(e.target.innerText);
+        setSelectedTime(e.target.innerText);
+
+
+    }
+
     // ---------------------------------
 
     const showToastMessage = () => {
@@ -37,11 +47,11 @@ const Profile = ({ cart }) => {
             <div className='m-2'>
                 <h5>Add A Break</h5>
                 <div className='d-flex bg-info rounded-3 align-items-center justify-content-center'>
-                    <button className='rounded-circle p-2 m-2 border border-0'>10s</button>
-                    <button className='rounded-circle p-2 m-2 border border-0'>20s</button>
-                    <button className='rounded-circle p-2 m-2 border border-0'>30s</button>
-                    <button className='rounded-circle p-2 m-2 border border-0'>40s</button>
-                    <button className='rounded-circle p-2 m-2 border border-0'>50s</button>
+                    <button className='rounded-circle p-2 m-2 border border-0' onClick={selectBreak}>10s</button>
+                    <button className='rounded-circle p-2 m-2 border border-0' onClick={selectBreak}>20s</button>
+                    <button className='rounded-circle p-2 m-2 border border-0' onClick={selectBreak}>30s</button>
+                    <button className='rounded-circle p-2 m-2 border border-0' onClick={selectBreak}>40s</button>
+                    <button className='rounded-circle p-2 m-2 border border-0' onClick={selectBreak}>50s</button>
                 </div>
             </div>
             <div className='m-3'>
@@ -53,7 +63,7 @@ const Profile = ({ cart }) => {
                 </div>
                 <div className='d-flex align-items-center justify-content-around bg-info mt-2 rounded-3'>
                     <h6>Break time</h6>
-                    <p className='p-2'><span>0</span> seconds</p>
+                    <p className='p-2'><span>{selectedTime}</span></p>
                 </div>
 
             </div>
