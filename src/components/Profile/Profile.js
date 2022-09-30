@@ -1,6 +1,6 @@
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // toast.configure()
@@ -11,12 +11,20 @@ const Profile = ({ cart }) => {
 
     const [selectedTime, setSelectedTime] = useState([]);
 
+    const [breakTime, setBreakTime] = useState([]);
+
     const selectBreak = (e) => {
         console.log(e.target.innerText);
         setSelectedTime(e.target.innerText);
-
-
+        localStorage.setItem('time', e.target.innerText);
     }
+
+    useEffect(() => {
+        const brkTime = localStorage.getItem('time');
+        setBreakTime(brkTime);
+
+
+    }, []);
 
     // ---------------------------------
 
@@ -64,6 +72,9 @@ const Profile = ({ cart }) => {
                 <div className='d-flex align-items-center justify-content-around bg-info mt-2 rounded-3'>
                     <h6>Break time</h6>
                     <p className='p-2'><span>{selectedTime}</span></p>
+                </div>
+                <div className='bg-info mt-2 p-1 rounded-3'>
+                    <p>Previous Break Time {breakTime}</p>
                 </div>
 
             </div>
