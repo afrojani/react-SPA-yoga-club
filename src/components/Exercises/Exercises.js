@@ -26,15 +26,15 @@ const Exercises = () => {
     // // ----------------------------------------
 
     return (
-        <div className='bg-secondary d-flex'>
-            <div className='border border-primary col-9'>
+        <div className='bg-secondary d-flex flex-md-row flex-column '>
+            <div className='border border-primary col-12 col-md-7 col-lg-9'>
                 <div className='text-white' >
                     <div className='d-flex align-items-center justify-content-center'>
                         <FontAwesomeIcon icon={faDumbbell}></FontAwesomeIcon>
                         <h2>Yoga Club</h2>
                     </div>
                     <h5 className='d-flex align-items-center justify-content-center m-3'>Select today’s yoga pose.</h5>
-                    <div className=' row row-cols-1 row-cols-md-2 row-cols-lg-3 ' >
+                    <div className=' row row-cols-1  row-cols-lg-3 ' >
                         {
                             exercises.map(exercise => <Exercise
                                 key={exercise.id}
@@ -46,7 +46,7 @@ const Exercises = () => {
                     </div>
                 </div>
             </div>
-            <div className='bg-light border border-warning col-3'>
+            <div className='bg-light border border-warning col-12 col-md-5 col-lg-3'>
                 <Profile cart={cart}></Profile>
             </div>
         </div>
